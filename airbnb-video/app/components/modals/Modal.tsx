@@ -1,9 +1,44 @@
-const Modals = () => {
+"use client";
+
+import { useState, useEffect } from "react";
+
+interface ModalProps {
+  isOpen?: boolean;
+  onClose: () => void;
+  onSubmit: () => void;
+  title?: string;
+  body?: React.ReactElement;
+  footer?: React.ReactElement;
+  actionLabel: string;
+  disabled?: boolean;
+  secondaryAction?: () => void;
+  secondaryLabel?: string;
+}
+
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  onSubmit,
+  title,
+  body,
+  footer,
+  actionLabel,
+  disabled,
+  secondaryAction,
+  secondaryLabel
+}) => {
+
+  const [showModal, setShowModal] = useState(isOpen);
+
+  useEffect(() => {
+    setShowModal(isOpen)
+  }, [isOpen])
+  
   return(
     <div>
-      <h1 className="text-rose-500 text-xl transition hover:text-emerald-500 hover:scale-105  cursor-pointer">What is modals?</h1>
+      
     </div>
   )
 }
 
-export default Modals
+export default Modal
