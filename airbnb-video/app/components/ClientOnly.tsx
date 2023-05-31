@@ -20,3 +20,5 @@ const ClientOnly: React.FC<ClientOnlyProps> = ({
       </>
   )
 }
+
+export default ClientOnly;
