@@ -98,9 +98,9 @@ const RegisterModal = () => {
         onClick={() => {}}
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
-        <div className="flex flex-row items-center gap-2">
+        <div className="justify-center flex flex-row items-center gap-2">
           <div>Already have an account?</div>
-          <div>Log in</div>
+          <div className="text-neutral-800 cursor-pointer hover:underline">Log in</div>
         </div>
       </div>
     </div>
