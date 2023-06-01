@@ -8,6 +8,8 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import useRegisterModal from "../../hooks/useRegisterModal";
 
+import Modal from "./Modal";
+
 const RegisterModal = () => {
 
   const registerModal = useRegisterModal();
@@ -34,10 +36,23 @@ const RegisterModal = () => {
     .then(() => {
       registerModal.onClose();
     })
+    .catch((error) => {
+      console.log(error);
+    })
+    .finally(() => {
+      setIsLoading(false);
+    })
   }
 
   return(
-    <div></div>
+    <Modal 
+      disabled={isLoading}
+      isOpen={registerModal.isOpen}
+      title="Register"
+      actionLabel="Continue"
+      onClose={registerModal.onClose}
+      onSubmit={handleSubmit(onSubmit)}
+    />
   )
 }
 
