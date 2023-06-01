@@ -17,11 +17,11 @@ interface InputProps {
 const Input: React.FC<InputProps> = ({
   id,
   label,
-  type,
+  type = "text",
   disabled,
   formatPrice,
-  required,
   register,
+  required,
   errors
 }) => {
   return (
@@ -33,10 +33,10 @@ const Input: React.FC<InputProps> = ({
           className="text-neutral-700 absolutr top-5 left-2"
         />
       )}
-      <Input 
+      <input 
         id={id}
         disabled={disabled}
-        { ...register(id, { required })}
+        {...register(id, { required })}
         placeholder=" "
         type={type}
         className={`
@@ -54,11 +54,11 @@ const Input: React.FC<InputProps> = ({
           disabled:cursor-not-allowed
           ${formatPrice ? 'pl-9' : 'pl-4'}
           ${errors[id] ? 'border-rose-500' : 'border-neutral-300'}
-          ${errors[id] ? 'focus:border-rose-500' : 'focus:border-neutral-300'}
+          ${errors[id] ? 'focus:border-rose-500' : 'focus:border-black'}
         `}
       />
     </div>
   )
 }
 
-export default Input
+export default Input;
