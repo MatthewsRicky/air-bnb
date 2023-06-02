@@ -7,6 +7,7 @@ import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import useRegisterModal from "../../hooks/useRegisterModal";
+import useLoginModal from "../../hooks/useLoginModal";
 
 import Modal from "./Modal";
 import Heading from "../Heading";
@@ -17,6 +18,7 @@ import Button from "../Button";
 const LoginModal = () => {
 
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal()
   const [isLoading, setIsLoading] = useState(false);
 
   const {
