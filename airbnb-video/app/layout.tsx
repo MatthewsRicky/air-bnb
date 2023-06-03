@@ -31,7 +31,7 @@ export default async function RootLayout({
           <ToastProvider />
           <LoginModal />
           <RegisterModal />
-          <Navbar />
+          <Navbar currentUser={currentUser} />
         </ClientOnly>
         
         {children}
