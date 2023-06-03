@@ -29,7 +29,6 @@ const LoginModal = () => {
     } 
   } = useForm<FieldValues>({
     defaultValues: {
-      name: '',
       email: '',
       password: ''
     }
@@ -53,8 +52,8 @@ const LoginModal = () => {
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading 
-        title="Welcome to Airbnb"
-        subtitle="Create an Account!"      
+        title="Welcome back"
+        subtitle="Login to your Account"      
       />
       <Input 
         id="email"
@@ -64,14 +63,7 @@ const LoginModal = () => {
         errors={errors}
         required
       />
-      <Input 
-        id="name"
-        label="Name"
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      />
+      
       <Input 
         type="password"
         id="password"
@@ -115,7 +107,7 @@ const LoginModal = () => {
     <Modal 
       disabled={isLoading}
       isOpen={loginModal.isOpen}
-      title="Register"
+      title="Login"
       actionLabel="Continue"
       onClose={loginModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
