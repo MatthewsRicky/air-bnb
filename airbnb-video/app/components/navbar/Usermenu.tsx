@@ -6,8 +6,16 @@ import { useCallback, useState } from "react";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import useLoginModal from "../../hooks/useLoginModal";
+import { User } from "@prisma/client";
 
-const Usermenu = () => {
+
+interface UsermenuProps {
+  currentUser?: User | null
+}
+
+const Usermenu: React.FC<UsermenuProps> = ({
+  currentUser
+}) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
 
@@ -39,6 +47,34 @@ const Usermenu = () => {
       {isOpen && (
         <div className="rounded-xl absolute shadow-md w[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
+            {currentUser ? (
+               <>
+               <MenuItem 
+                 onClick={() => {}}
+                 label="My Trips"
+               />
+               <MenuItem 
+                 onClick={() => {}}
+                 label="My Favotites"
+               />
+               <MenuItem 
+                 onClick={() => {}}
+                 label="My Reservations"
+               />
+               <MenuItem 
+                 onClick={() => {}}
+                 label="My Properties"
+               />
+               <MenuItem 
+                 onClick={() => {}}
+                 label="Airbnb my Home"
+               />
+               <MenuItem 
+                 onClick={() => {}}
+                 label="Logout"
+               />
+             </>
+            ): (
             <>
               <MenuItem 
                 onClick={loginModal.onOpen}
@@ -49,6 +85,7 @@ const Usermenu = () => {
                 label="Sign up"
               />
             </>
+            )}
           </div>
         </div>
       )}
