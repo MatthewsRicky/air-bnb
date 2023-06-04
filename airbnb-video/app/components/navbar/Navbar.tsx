@@ -5,7 +5,7 @@ import { User } from "@prisma/client"
 import Container from "../Container"
 import Logo from "./Logo"
 import Search from "./Search"
-import Usermenu from "./Usermenu"
+import UserMenu from "./UserMenu"
 
 interface NavbarProps {
   currentUser?: User | null;
@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
             <Logo />
             <Search />
-            <Usermenu currentUser={currentUser} />
+            <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
