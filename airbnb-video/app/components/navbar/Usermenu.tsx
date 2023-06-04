@@ -26,6 +26,8 @@ const Usermenu: React.FC<UsermenuProps> = ({
     setIsOpen((value) => !value);
   }, []);
 
+  console.log(currentUser);
+
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
@@ -46,37 +48,50 @@ const Usermenu: React.FC<UsermenuProps> = ({
       </div>
 
       {isOpen && (
-        <div className="rounded-xl absolute shadow-md w[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
+        <div 
+          className="
+            rounded-xl
+            absolute 
+            shadow-md 
+            w[40vw] 
+            md:w-3/4 
+            bg-white 
+            overflow-hidden 
+            right-0 
+            top-12 
+            text-sm">
           <div className="flex flex-col cursor-pointer">
-            {currentUser ? (
-               <>
-               <MenuItem 
-                 onClick={() => {}}
-                 label="My Trips"
-               />
-               <MenuItem 
-                 onClick={() => {}}
-                 label="My Favotites"
-               />
-               <MenuItem 
-                 onClick={() => {}}
-                 label="My Reservations"
-               />
-               <MenuItem 
-                 onClick={() => {}}
-                 label="My Properties"
-               />
-               <MenuItem 
-                 onClick={() => {}}
-                 label="Airbnb my Home"
-               />
-               <MenuItem 
-                 onClick={() => {}}
-                 label="Logout"
-               />
-             </>
-            ): (
-            <>
+             {currentUser ? (
+                  <div>
+                   <MenuItem 
+                     onClick={() => {}}
+                     label="My Trips"
+                   />
+                   <MenuItem 
+                     onClick={() => {}}
+                     label="My Favotites"
+                   />
+                   <MenuItem 
+                     onClick={() => {}}
+                     label="My Reservations"
+                   />
+                   <MenuItem 
+                     onClick={() => {}}
+                     label="My Properties"
+                   />
+                   <MenuItem 
+                     onClick={() => {}}
+                     label="Airbnb my Home"
+                   />
+                   <MenuItem 
+                     onClick={() => {}}
+                     label="Logout"
+                   />
+                 </div>
+                
+              )
+            : (
+              <>
               <MenuItem 
                 onClick={loginModal.onOpen}
                 label="Login"
