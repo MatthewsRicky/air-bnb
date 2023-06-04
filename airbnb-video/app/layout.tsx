@@ -7,7 +7,7 @@ import ClientOnly from "./components/ClientOnly";
 import LoginModal from "./components/modals/LoginModal";
 import RegisterModal from "./components/modals/RegisterModal";
 import ToastProvider from "./providers/ToasterProvider";
-import getSCurrentUser from "./actions/getCurrentUser";
+import getCurrentUser from "./actions/getCurrentUser";
 
 export const metadata = {
   title: 'Airbnb',
@@ -23,7 +23,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const currentUser = await getSCurrentUser();
+  const currentUser = await getCurrentUser();
   return (
     <html lang="en">
       <body className={font.className}>
